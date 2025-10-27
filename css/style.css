@@ -21,6 +21,13 @@ body {
   gap: 1rem;
 }
 
+.main-container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    gap: 1rem;
+}
+
 h1 {
   font-family: "Karla", sans-serif;
   font-optical-sizing: auto;
@@ -33,22 +40,75 @@ span {
   color: #10B981;
 }
 
-button {
+header p {
+    color: #6B7280;
+    margin: 1rem 0;
+}
+
+.generate-password-button {
   background-color: #10B981;
   color: white;
-  padding: 1rem;
+  padding: 0.7rem;
+  align-self: self-start;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
   font-size: 1rem;
+}
+
+.generate-password-button:hover {
+    background-color: #047857;
 }
 
 .password-result {
   background-color: #273549;
   color: #5DEF92;
+  text-align: center;
+  padding: 0.6rem 0.7rem;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  min-width: 288px;
 }
 
 .results {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column nowrap;
   justify-content: space-evenly;
   gap: 1rem;
   align-items: center;
+  border-top: 1.2px solid #D5D4D8;
+  padding: 2rem 0;
+}
+
+.container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+}
+
+.fa-regular, .fa-copy {
+    color: #6B7280;
+}
+
+label {
+    color: #6B7280;
+}
+
+.copy-password {
+    border: none;
+    padding: 0.5rem;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+
+.password-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
 }
