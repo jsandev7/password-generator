@@ -1,24 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Generator</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
     <header>
-        <h1>Generate a random password</h1>
+        <h1>Generate a <br><span>random password</span></h1>
         <p>Never use an insecure password again.</p>
     </header>
 
-    <button>Generate passwords</button>
-
-    <section class="password-results">
-        <p class="password-result">First password generate goes here</p>
-        <p class="password-result">Second password generate goes here</p>
+    <button class="generate" id="generate-passwords-button">Generate passwords</button>
+    <section class="container">
+        <input type="checkbox" name="hide-numbers-and-symbols" id="hide-numbers-and-symbols">
+        <label for="hide-numbers-and-symbols">Hide numbers and symbols</label>
+    </section>
+    <section class="results">
+        <article class="password-container">
+            <p class="password-result">First password generate goes here</p>
+            <button class="copy">
+                <i class="fa-regular fa-copy"></i>
+            </button>
+        </article>
+        <article class="password-container">
+            <p class="password-result">Second password generate goes here</p>
+            <button class="copy">Copy</button>
+        </article>
     </section>
 
     <script src="./js/index.js"></script>
 </body>
+
 </html>
