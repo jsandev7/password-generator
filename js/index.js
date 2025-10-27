@@ -3,6 +3,7 @@ const characters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", 
 
 const MAX_LETTER_INDEX = 51
 const LENGTH_OF_ARRAY_OF_CHARACTERS = characters.length
+const DEFAULT_PASSWORD_LENGTH = 32
 
 // Generar numeros aleatorios
 function generateRandomIntNumber(minIntNumber, maxIntNumber) {
@@ -14,7 +15,7 @@ function generateRandomIntNumber(minIntNumber, maxIntNumber) {
 }
 
 // Funcion generar password
-function generatePassword(arrayOfElements, sizeOfPassword = 15, includeNumbersAndSymbols = true) {
+function generatePassword(arrayOfElements, sizeOfPassword = DEFAULT_PASSWORD_LENGTH, includeNumbersAndSymbols = true) {
     let generatedPassword = ""
     
     if (includeNumbersAndSymbols) {
@@ -30,8 +31,19 @@ function generatePassword(arrayOfElements, sizeOfPassword = 15, includeNumbersAn
     return generatedPassword
 }
 
-document.querySelectorAll(".password-result")[0].textContent = generatePassword(characters, 15)
-document.querySelectorAll(".password-result")[1].textContent = generatePassword(characters, 15)
+
+const generatePasswordButton = document.querySelector("#generate-passwords-button");
+const checkBoxButton = document.querySelector("#hide-numbers-and-symbols");
+
+
+// console.log(checkBoxButton.ATTRIBUTE_NODE.valueOf())
+
+// generatePasswordButton.addEventListener("click", generatePassword(characters, DEFAULT_PASSWORD_LENGTH))
+
+document.querySelectorAll(".password-result")[0].textContent = generatePassword(characters, DEFAULT_PASSWORD_LENGTH)
+
+
+document.querySelectorAll(".password-result")[1].textContent = generatePassword(characters, DEFAULT_PASSWORD_LENGTH)
 
 
 
