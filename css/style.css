@@ -2,6 +2,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -22,10 +24,10 @@ body {
 }
 
 .main-container {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-evenly;
-    gap: 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  gap: 1rem;
 }
 
 h1 {
@@ -41,8 +43,8 @@ span {
 }
 
 header p {
-    color: #6B7280;
-    margin: 1rem 0;
+  color: #6B7280;
+  margin: 1rem 0;
 }
 
 .generate-password-button {
@@ -57,7 +59,7 @@ header p {
 }
 
 .generate-password-button:hover {
-    background-color: #047857;
+  background-color: #047857;
 }
 
 .password-result {
@@ -67,7 +69,13 @@ header p {
   padding: 0.6rem 0.7rem;
   font-size: 0.9rem;
   border-radius: 6px;
-  min-width: 288px;
+  min-width: 200px;
+  max-width: 200px;
+  width: 200px;
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+
+  font-style: normal;
 }
 
 .results {
@@ -81,34 +89,36 @@ header p {
 }
 
 .container {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 0.5rem;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
 }
 
-.fa-regular, .fa-copy {
-    color: #6B7280;
+.fa-regular,
+.fa-copy {
+  color: #6B7280;
 }
 
 label {
-    color: #6B7280;
+  color: #6B7280;
 }
 
 .copy-password {
-    border: none;
-    padding: 0.5rem;
-    font-size: 1.3rem;
-    cursor: pointer;
+  border: none;
+  padding: 0.5rem;
+  font-size: 1.3rem;
+  cursor: pointer;
 }
 
 
 .password-container {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  width: 100%;
 }
