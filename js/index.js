@@ -32,19 +32,34 @@ function generatePassword(arrayOfElements, sizeOfPassword = DEFAULT_PASSWORD_LEN
 
 const passwordButton = document.querySelector("#generate-passwords-button");
 
+
+const checkboxInput = document.querySelector("#hide-numbers-and-symbols");
+
 passwordButton.addEventListener("click", () => {
-    document.querySelectorAll(".password-result")[0].textContent = generatePassword(characters, DEFAULT_PASSWORD_LENGTH);
-    document.querySelectorAll(".password-result")[1].textContent = generatePassword(characters, DEFAULT_PASSWORD_LENGTH);
+    let isChecked = checkboxInput.checked
+
+    if (isChecked) {
+        document.querySelectorAll(".password-result")[0].textContent = generatePassword(characters, DEFAULT_PASSWORD_LENGTH, false);
+        document.querySelectorAll(".password-result")[1].textContent = generatePassword(characters, DEFAULT_PASSWORD_LENGTH, false);
+    } else {
+        document.querySelectorAll(".password-result")[0].textContent = generatePassword(characters, DEFAULT_PASSWORD_LENGTH);
+        document.querySelectorAll(".password-result")[1].textContent = generatePassword(characters, DEFAULT_PASSWORD_LENGTH);
+    }
 });
 
+// Copiar en portapapeles
+
+// let firstPassword = document.querySelectorAll(".password-result")[0].textContent
 
 
+// const button = document.querySelectorAll('copy-password')[0];
 
-
-
-
-
-
-
+// button.addEventListener('click', async () => {
+//   try {
+//     await navigator.clipboard.writeText(firstPassword);
+//   } catch (err) {
+//     console.error(err.name, err.message);
+//   }
+// });
 
 
