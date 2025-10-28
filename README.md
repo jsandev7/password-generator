@@ -3,14 +3,14 @@
 ## Goals.
 
 - [ ] Built in from "scratch".
-- [ ] Generate two random password when the user clicks the button.
+- [x] Generate two random password when the user clicks the button.
 - [ ] Each password should be 15 characters long.
 
 ## Stretch Goals.
 
 - [ ] Ability to set password lenght.
-- [ ] Add "copy-on-click".
-- [ ] Toggle "symbols" and "numbers" on/off.
+- [x] Add "copy-on-click".
+- [x] Toggle "symbols" and "numbers" on/off.
 
 ## Code suggestions.
 
