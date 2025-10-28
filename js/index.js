@@ -47,19 +47,22 @@ passwordButton.addEventListener("click", () => {
     }
 });
 
-// Copiar en portapapeles
 
-// let firstPassword = document.querySelectorAll(".password-result")[0].textContent
+let firstPassword = document.querySelectorAll(".password-result")[0];
+let secondPassword = document.querySelectorAll(".password-result")[1];
 
 
-// const button = document.querySelectorAll('copy-password')[0];
+const copyFirstPasswordButton = document.querySelectorAll(".copy-password")[0];
 
-// button.addEventListener('click', async () => {
-//   try {
-//     await navigator.clipboard.writeText(firstPassword);
-//   } catch (err) {
-//     console.error(err.name, err.message);
-//   }
-// });
+copyFirstPasswordButton.addEventListener("click", () => {
+    navigator.clipboard.writeText(firstPassword.textContent);
+    alert("Texto copiado en portapapeles");
+});
 
+const copySecondPasswordButton = document.querySelectorAll(".copy-password")[1];
+
+copySecondPasswordButton.addEventListener("click", () => {
+    navigator.clipboard.writeText(secondPassword.textContent);
+    alert("Texto copiado en portapapeles");
+});
 
