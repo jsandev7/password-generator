@@ -125,3 +125,22 @@ label {
   padding: 0.5rem 0;
   width: 100%;
 }
+
+#number-of-characters {
+  padding: 0.5rem 0.3rem;
+  width: 50px;
+  color: #6B7280;
+  border: none;
+  border-radius: 6px;
+}
+
+.password-length-container {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+input[type="range"] {
+  accent-color: #273549;
+}
