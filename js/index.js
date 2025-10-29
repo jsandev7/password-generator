@@ -1,68 +1,49 @@
-const characters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "{", "[", "}", "]", ",", "|", ":", ";", "<", ">", ".", "?",
-    "/"];
+<!DOCTYPE html>
+<html lang="en">
 
-const MAX_LETTER_INDEX = 51
-const LENGTH_OF_ARRAY_OF_CHARACTERS = characters.length
-const DEFAULT_PASSWORD_LENGTH = 16
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
 
-// Generar numeros aleatorios
-function generateRandomIntNumber(minIntNumber, maxIntNumber) {
-    let randomIntNumber = null
+<body>
+    <main class="main-container">
+        <header>
+            <h1>Generate a <br><span>random password</span></h1>
+            <p>Never use an insecure password again.</p>
+        </header>
 
-    randomIntNumber = Math.floor(Math.random() * (maxIntNumber - minIntNumber + 1) + minIntNumber);
+        <button class="generate-password-button" id="generate-passwords-button">Generate passwords</button>
+        <section class="password-length-container">
+            <label for="password-length-slider" class="password-length-min">Characters</label>
+            <input type="range" step="1" min="8" max="16" value="8" id="password-length-slider"
+                name="password-length-slider">
+            <input type="number" name="number-of-characters" id="number-of-characters" value="8" step="1" min="8" max="16">
+        </section>
+        <section class="container">
+            <input type="checkbox" name="hide-numbers-and-symbols" id="hide-numbers-and-symbols">
+            <label for="hide-numbers-and-symbols">Hide numbers and symbols</label>
+        </section>
+        <section class="results">
+            <article class="password-container">
+                <p class="password-result">First Password</p>
+                <button class="copy-password">
+                    <i class="fa-regular fa-copy"></i>
+                </button>
+            </article>
+            <article class="password-container">
+                <p class="password-result">Second Password</p>
+                <button class="copy-password">
+                    <i class="fa-regular fa-copy"></i>
+                </button>
+            </article>
+        </section>
+    </main>
 
-    return randomIntNumber
-}
+    <script src="./js/index.js"></script>
+</body>
 
-// Funcion generar password
-function generatePassword(arrayOfElements, sizeOfPassword = DEFAULT_PASSWORD_LENGTH, includeNumbersAndSymbols = true) {
-    let generatedPassword = ""
-
-    if (includeNumbersAndSymbols) {
-        for (let i = 0; i < sizeOfPassword; i++) {
-            generatedPassword += arrayOfElements[generateRandomIntNumber(0, LENGTH_OF_ARRAY_OF_CHARACTERS - 1)]
-        }
-    } else {
-        for (let i = 0; i < sizeOfPassword; i++) {
-            generatedPassword += arrayOfElements[generateRandomIntNumber(0, MAX_LETTER_INDEX)]
-        }
-    }
-    return generatedPassword
-}
-
-const passwordButton = document.querySelector("#generate-passwords-button");
-
-
-const checkboxInput = document.querySelector("#hide-numbers-and-symbols");
-
-passwordButton.addEventListener("click", () => {
-    let isChecked = checkboxInput.checked
-
-    if (isChecked) {
-        document.querySelectorAll(".password-result")[0].textContent = generatePassword(characters, DEFAULT_PASSWORD_LENGTH, false);
-        document.querySelectorAll(".password-result")[1].textContent = generatePassword(characters, DEFAULT_PASSWORD_LENGTH, false);
-    } else {
-        document.querySelectorAll(".password-result")[0].textContent = generatePassword(characters, DEFAULT_PASSWORD_LENGTH);
-        document.querySelectorAll(".password-result")[1].textContent = generatePassword(characters, DEFAULT_PASSWORD_LENGTH);
-    }
-});
-
-
-let firstPassword = document.querySelectorAll(".password-result")[0];
-let secondPassword = document.querySelectorAll(".password-result")[1];
-
-
-const copyFirstPasswordButton = document.querySelectorAll(".copy-password")[0];
-
-copyFirstPasswordButton.addEventListener("click", () => {
-    navigator.clipboard.writeText(firstPassword.textContent);
-    alert("Texto copiado en portapapeles");
-});
-
-const copySecondPasswordButton = document.querySelectorAll(".copy-password")[1];
-
-copySecondPasswordButton.addEventListener("click", () => {
-    navigator.clipboard.writeText(secondPassword.textContent);
-    alert("Texto copiado en portapapeles");
-});
-
+</html>
