@@ -127,8 +127,10 @@ label {
 }
 
 #number-of-characters {
-  padding: 0.5rem 0.3rem;
+  padding: 0.5rem 0.5rem;
   width: 50px;
+  max-width: 50px;
+  min-width: 50px;
   color: #6B7280;
   border: none;
   border-radius: 6px;
@@ -144,3 +146,4 @@ label {
 input[type="range"] {
   accent-color: #273549;
 }
+
