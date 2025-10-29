@@ -18,9 +18,10 @@
 
         <button class="generate-password-button" id="generate-passwords-button">Generate passwords</button>
         <section class="password-length-container">
-            <label for="password-length-slider">Password Length</label>
+            <label for="password-length-slider" class="password-length-min">Characters</label>
             <input type="range" step="1" min="8" max="16" value="8" id="password-length-slider"
                 name="password-length-slider">
+            <input type="number" name="number-of-characters" id="number-of-characters" value="8" step="1" min="8" max="16">
         </section>
         <section class="container">
             <input type="checkbox" name="hide-numbers-and-symbols" id="hide-numbers-and-symbols">
